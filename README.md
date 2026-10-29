@@ -58,3 +58,15 @@ This repository is maintained by Péter Szilágyi ([@karalabe](https://github.co
 ## License
 
 [Same as original](https://github.com/adorableio/avatars-api-middleware), MIT.
+
+## TypeScript port
+
+`ts/` ports the deterministic generator for the web. `pseudoRandom(seed)` returns the same eyes, nose, mouth and background bytes as `adorable.PseudoRandom`, checked against Go output in `ts/test/parity.test.ts`. It returns the face, not a PNG: the caller serves the three images from `internal/bodyparts`.
+
+Used by [mwyndham.dev](https://mwyndham.dev).
+
+```sh
+cd ts
+npm install
+npm test
+```
