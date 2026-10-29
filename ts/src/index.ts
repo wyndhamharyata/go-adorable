@@ -30,8 +30,8 @@ function concat(a: Uint8Array, b: Uint8Array): Uint8Array {
 // HKDF-SHA3-256 with a nil salt and no info, as golang.org/x/crypto/hkdf reads it.
 class HkdfStream {
   private readonly prk: Uint8Array;
-  private block = new Uint8Array(0);
-  private buf = new Uint8Array(0);
+  private block: Uint8Array = new Uint8Array(0);
+  private buf: Uint8Array = new Uint8Array(0);
   private counter = 0;
 
   constructor(prk: Uint8Array) {
